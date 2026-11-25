@@ -1,11 +1,11 @@
 /* Haim Al Galgalim, anniversary page. No libraries. Everything degrades to plain links without JS. */
 (function () {
   'use strict';
-  var DAY = Date.UTC(2026, 11, 2);        // 2.12.2026, the anniversary
-  var FIRST = Date.UTC(2025, 11, 2);      // 2.12.2025, first song
+  var DAY = Date.UTC(2026, 11, 3);        // 3.12.2026, the anniversary celebration (Tamir 25.11)
+  var FIRST = Date.UTC(2025, 11, 3);      // one year before the celebration, start of the ring
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Today's date in Israel. ?today=YYYY-MM-DD overrides it, for previewing the 2.12 state.
+  // Today's date in Israel. ?today=YYYY-MM-DD overrides it, for previewing the 3.12 state.
   function todayIL() {
     var q = /[?&]today=(\d{4})-(\d{2})-(\d{2})/.exec(location.search);
     if (q) return Date.UTC(+q[1], +q[2] - 1, +q[3]);
@@ -36,7 +36,7 @@
     dial.style.setProperty('--target', '360deg');
     var dl = $('.dial__light'); if (dl && dl.dataset.daySrc) { dl.removeAttribute('srcset'); dl.src = dl.dataset.daySrc; }
   } else {
-    var line = daysPhrase(left) + ' לשנה לחיים על גלגלים';
+    var line = left === 1 ? 'מחר חוגגים שנה לחיים על גלגלים' : daysPhrase(left) + ' לשנה לחיים על גלגלים';
     $('[data-cd="strip"]').textContent = line;
     $('[data-cd="title"]').textContent = line;
     $('[data-cd="num"]').textContent = left === 1 ? '1' : String(left);
@@ -62,9 +62,9 @@
   // Reminder. Apple devices get the .ics file, everyone else Google Calendar.
   var remind = $('[data-remind]');
   if (remind && /iPhone|iPad|iPod|Macintosh/.test(navigator.userAgent)) {
-    remind.href = 'haim-al-galgalim-2-12.ics';
+    remind.href = 'haim-al-galgalim-3-12.ics';
     remind.removeAttribute('target');
-    remind.setAttribute('download', 'haim-al-galgalim-2-12.ics');
+    remind.setAttribute('download', 'haim-al-galgalim-3-12.ics');
   }
 
   // Share. Native share sheet when available, WhatsApp link otherwise (the href).

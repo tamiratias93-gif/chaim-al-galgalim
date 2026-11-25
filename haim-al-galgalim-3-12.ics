@@ -4,10 +4,10 @@ PRODID:-//Haim Al Galgalim//Anniversary//HE
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
-UID:haim-al-galgalim-anniversary-20261202
+UID:haim-al-galgalim-anniversary-20261203
 DTSTAMP:20261125T000000Z
-DTSTART;VALUE=DATE:20261202
-DTEND;VALUE=DATE:20261203
+DTSTART;VALUE=DATE:20261203
+DTEND;VALUE=DATE:20261204
 SUMMARY:שנה לחיים על גלגלים
 DESCRIPTION:שנה\, שמונה שירים\, שמונה קולות. להאזנה לאלבום המלא https://chaimalgalgalim.lnk.to/profile
 URL:https://chaimalgalgalim.lnk.to/profile
