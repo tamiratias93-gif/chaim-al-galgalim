@@ -1,0 +1,150 @@
+/* Hallmark · macrostructure: Campaign Poster (studied-DNA, poster hero + countdown band + timeline index)
+ * hero: H2 Split · ratio=5/6 · right=logo mark (RTL start) · divider=negative space
+ * footer: Ft1 minimal credit line · nav: none (top countdown strip + mobile action dock)
+ * theme: studied-DNA (sources: thecure.com, taylorswift.com, oasisinet.com, idanamedi.com, ishayribo.com, rosalia.com)
+ * paper: warm chocolate #1C1613 (from 25.11, was #0C0B0A), one light paper section (songs) · accent: peach #CC9C8A (official artist poster), footprint small
+ * display: Fredoka 600 (rounded, like the logo lettering, chosen by Tamir 25.11) · body: IBM Plex Sans Hebrew 400/600
+ * studied: yes · DNA-source: url + screenshots, 25.11.2026
+ */
+
+@font-face {
+  font-family: "Fredoka";
+  src: url("../fonts/fredoka-hebrew.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+@font-face {
+  font-family: "Fredoka";
+  src: url("../fonts/fredoka-latin.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Sans Hebrew";
+  src: url("../fonts/plex-hebrew-400-hebrew.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+@font-face {
+  font-family: "IBM Plex Sans Hebrew";
+  src: url("../fonts/plex-hebrew-400-latin.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Sans Hebrew";
+  src: url("../fonts/plex-hebrew-600-hebrew.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+@font-face {
+  font-family: "IBM Plex Sans Hebrew";
+  src: url("../fonts/plex-hebrew-600-latin.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD;
+}
+
+@property --sweep {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 360deg;
+}
+
+:root {
+  /* colour, all sampled from the logo files, neutrals tinted warm */
+  --c-ink:        #1C1613;  /* warm chocolate base (Tamir 25.11: less night, more celebration) */
+  --c-ink-2:      #241C18;
+  --c-ring:       #1F1F1C;  /* 3D ring body */
+  --c-rule:       #3E332D;
+  --c-concrete:   #4B4B48;  /* 3D ring side */
+  --c-muted:      #B9B5AD;  /* secondary text on ink, 9.6:1 */
+  --c-paper:      #F1F1EF;  /* logo background */
+  --c-cream:      #E8DDCF;  /* light logo tone, softer than paper */
+  --c-paper-2:    #E4E2DD;
+  --c-paper-ink-muted: #4B4B48; /* secondary text on paper, 8.2:1 */
+  --c-peach:      #CC9C8A;  /* song titles on the official poster */
+  --c-peach-hi:   #DDB4A4;
+  --c-peach-lo:   #B98472;
+  --c-peach-edge: #E2BBAA;
+  --c-on-peach:   #1C1613;
+  --c-btn-shine:  rgb(255 244 236 / 0.55);
+  --c-glow-strong: rgb(204 156 138 / 0.55);
+  --c-peach-a45:  rgb(204 156 138 / 0.45);
+  --c-glow-ring:  rgb(204 156 138 / 0.18);
+  --c-glass:      rgb(241 241 239 / 0.06);
+  --c-glass-2:    rgb(241 241 239 / 0.12);
+  --c-hairline-strong: rgb(241 241 239 / 0.32);
+  --c-focus:      #F4CDBD;
+  --c-focus-on-paper: #1C1613;
+  --c-glow:       rgb(214 160 136 / 0.38);
+  --c-glow-soft:  rgb(214 160 136 / 0.2);
+  --c-glow-none:  rgb(204 156 138 / 0);
+  --c-scrim:      rgb(28 22 19 / 0.6);
+  --c-dock:       rgb(36 28 24 / 0.92);
+  --c-hairline:   rgb(241 241 239 / 0.14);
+  --c-hairline-paper: rgb(28 22 19 / 0.18);
+  --c-ink-text:   #1C1613;  /* text on paper */
+  --c-ink-a35:    rgb(28 22 19 / 0.35);
+  --c-ink-a06:    rgb(28 22 19 / 0.06);
+
+  /* type */
+  --font-display: "Fredoka", "Varela Round", "Arial Hebrew", "Arial", sans-serif;
+  --font-body:    "IBM Plex Sans Hebrew", "Segoe UI", "Arial Hebrew", "Arial", sans-serif;
+  --text-xs:   0.8125rem;
+  --text-sm:   0.9375rem;
+  --text-base: 1.0625rem;
+  --text-md:   1.25rem;
+  --text-lg:   clamp(1.25rem, 0.9vw + 1rem, 1.625rem);
+  --text-xl:   clamp(1.75rem, 1.9vw + 1.1rem, 2.75rem);
+  --text-section: clamp(2.25rem, 3.4vw + 1.1rem, 4.25rem);
+  --text-hero: clamp(2.05rem, 3.4vw + 1.25rem, 4.75rem);
+  --text-count: clamp(4.25rem, 10vw, 7.5rem);
+
+  /* space, 4px base */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs:  0.75rem;
+  --space-sm:  1rem;
+  --space-md:  1.5rem;
+  --space-lg:  2rem;
+  --space-xl:  3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 8rem;
+
+  --radius-pill: 999px;
+  --radius-sm: 0.5rem;
+  --wrap: 76rem;
+  --measure: 62ch;
+  --dock-h: 4.5rem;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 160ms;
+  --dur-mid: 420ms;
+  --dur-draw: 1400ms;
+
+  --c-scrim-0:    rgb(28 22 19 / 0);
+  --c-scrim-1:    rgb(28 22 19 / 0.22);
+  --c-scrim-15:   rgb(28 22 19 / 0.36);
+  --c-scrim-2:    rgb(28 22 19 / 0.55);
+  --c-scrim-3:    rgb(28 22 19 / 0.8);
+
+  /* Runway images (07 - Runway, built by tools/build_assets.py). Set to none to fall back to procedural. */
+  --slot-hero-tall: image-set(url("../img/hero-bg-tall-768.avif") type("image/avif"), url("../img/hero-bg-tall-768.webp") type("image/webp"));
+  --slot-hero-wide: image-set(url("../img/hero-bg-wide-1376.avif") type("image/avif"), url("../img/hero-bg-wide-1376.webp") type("image/webp"));
+  --slot-closing-tall: image-set(url("../img/closing-tall-768.avif") type("image/avif"), url("../img/closing-tall-768.webp") type("image/webp"));
+  --slot-closing-wide: image-set(url("../img/closing-wide-1376.avif") type("image/avif"), url("../img/closing-wide-1376.webp") type("image/webp"));
+  /* Runway X2-X5 (extra prompts, 25.11) */
+  --slot-invite: image-set(url("../img/invite-1584.avif") type("image/avif"), url("../img/invite-1584.webp") type("image/webp"));
+  --slot-year-tall: image-set(url("../img/year-tall-768.avif") type("image/avif"), url("../img/year-tall-768.webp") type("image/webp"));
+  --slot-year-wide: image-set(url("../img/year-wide-1584.avif") type("image/avif"), url("../img/year-wide-1584.webp") type("image/webp"));
+  --slot-story:  image-set(url("../img/story-bg-1376.avif") type("image/avif"), url("../img/story-bg-1376.webp") type("image/webp"));
+  --slot-paper: image-set(url("../img/paper-960.avif") type("image/avif"), url("../img/paper-960.webp") type("image/webp"));
+  --slot-divider: image-set(url("../img/divider-1584.avif") type("image/avif"), url("../img/divider-1584.webp") type("image/webp"));
+}
